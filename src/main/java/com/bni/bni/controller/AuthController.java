@@ -20,18 +20,18 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    // @PostMapping("/register")
-    // public ResponseEntity<Map<String, Object>> register(@RequestBody Map<String, String> body) {
-    //     String username = body.get("username");
-    //     String password = body.get("password");
-    //     String message = authService.register(username, password);
+    @PostMapping("/register")
+    public ResponseEntity<Map<String, Object>> register(@RequestBody Map<String, String> body) {
+        String username = body.get("username");
+        String password = body.get("password");
+        String message = authService.register(username, password);
 
-    //     Map<String, Object> response = new HashMap<>();
-    //     response.put("status", 200);
-    //     response.put("message", message);
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", 200);
+        response.put("message", message);
 
-    //     return ResponseEntity.ok(response);
-    // }
+        return ResponseEntity.ok(response);
+    }
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, String> body) {
@@ -84,6 +84,7 @@ public class AuthController {
             response.put("status", 401);
             response.put("message", "Token tidak valid");
             return ResponseEntity.status(401).body(response);
+
         }
     }
 }
