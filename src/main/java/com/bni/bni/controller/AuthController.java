@@ -22,9 +22,10 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<Map<String, Object>> register(@RequestBody Map<String, String> body) {
+        String email = body.get("email");
         String username = body.get("username");
         String password = body.get("password");
-        String message = authService.register(username, password);
+        String message = authService.register(email, username, password);
 
         Map<String, Object> response = new HashMap<>();
         response.put("status", 200);
@@ -75,6 +76,7 @@ public class AuthController {
 
             response.put("status", 200);
             response.put("username", claims.getSubject());
+            response.put("email_address", claims.get("email_address"));
             response.put("role", claims.get("role"));
             response.put("issuedAt", claims.getIssuedAt());
             response.put("expiration", claims.getExpiration());
