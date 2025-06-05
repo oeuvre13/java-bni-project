@@ -124,6 +124,8 @@ CREATE TABLE users (
 
 ---
 
+hai
+
 ## 📌 Notes
 
 - The project uses Spring Security only for password encryption; it does not enforce authentication on protected routes.
