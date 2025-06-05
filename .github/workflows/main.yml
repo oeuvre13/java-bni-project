@@ -21,8 +21,8 @@ jobs:
 
     - name: Login to OpenShift
       run: |
-        oc login --token=$((secrets.OC_TOKEN)) --server=$((secrets.OC_SERVER))
+        oc login --token="${{secrets.OC_TOKEN}}" --server="${{secrets.OC_SERVER}}"
 
     - name: Start OpenShift Build
       run: |
-        oc start-build $((secrets.OC_BUILD_NAME)) -n $((secrets.OC_NAMESPACE)) --wait --follow
+        oc start-build $"{{secrets.OC_BUILD_NAME}}" -n "${{secrets.OC_NAMESPACE}}" --wait --follow
