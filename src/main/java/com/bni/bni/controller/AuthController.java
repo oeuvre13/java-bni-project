@@ -43,7 +43,7 @@ public class AuthController {
         if (token != null) {
             response.put("status", 200);
             response.put("token", token);
-            response.put("message", "Login berhasil");
+            response.put("message", "Login berhasil deh");
             return ResponseEntity.ok(response);
         } else {
             response.put("status", 401);
