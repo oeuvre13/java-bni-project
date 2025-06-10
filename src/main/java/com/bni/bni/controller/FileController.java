@@ -71,6 +71,7 @@ public class FileController {
                 contentType = "application/octet-stream";
             }
 
+            System.out.println("test log");
             return ResponseEntity.ok()
                     .contentType(MediaType.parseMediaType(contentType))
                     .header(HttpHeaders.CONTENT_DISPOSITION,"inline; filename=\"" + resource.getFilename() + "\"")
