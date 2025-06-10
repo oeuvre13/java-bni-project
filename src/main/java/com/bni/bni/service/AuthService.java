@@ -44,7 +44,7 @@ public class AuthService {
     public String login(String username, String password) {
         Optional<User> user = repo.findByUsername(username);
         if (user.isPresent() && encoder.matches(password, user.get().getPasswordHash())) {
-            return jwtUtil.generateToken(username, user.get().getEmail(), user.get().getRole());
+            return jwtUtil.generateToken(username, user.get().getId(), user.get().getRole());
         }
 
         return null;
