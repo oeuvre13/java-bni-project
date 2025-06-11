@@ -1,9 +1,7 @@
 package com.bni.bni.service;
 
 import com.bni.bni.entity.Profile;
-import com.bni.bni.entity.User;
 import com.bni.bni.repository.ProfileRepository;
-import com.bni.bni.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -22,7 +22,7 @@ This is a simple Spring Boot API that provides user **registration** and **login
 - Spring Data JPA
 - Spring Security (minimal config)
 - Oracle Database XE
-- Maven
+- Mavena
 
 ---
 
